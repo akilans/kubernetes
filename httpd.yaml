@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  creationTimestamp: null
   labels:
     app: my-apache
   name: my-apache
@@ -9,11 +10,15 @@ spec:
   selector:
     matchLabels:
       app: my-apache
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
         app: my-apache
     spec:
       containers:
       - image: httpd
         name: httpd
+        resources: {}
+status: {}
